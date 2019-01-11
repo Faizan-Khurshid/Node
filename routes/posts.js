@@ -1,8 +1,9 @@
 const express = require("express")
 const router = express.Router();
 
-router.use("/getall", () => {
+router.use("/getAll", (req, res) => {
     console.log("posts se getall chal raha ha")
+    console.log(req.body)
 })
 
 router.use("/add", () => {

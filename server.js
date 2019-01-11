@@ -1,6 +1,14 @@
 // })
 const express = require('express')
 const app = express()
+const mongoose = require("./config/db")
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+  console.log("db connected succesfully ")
+});
 
 //we cannot use import in node
 
